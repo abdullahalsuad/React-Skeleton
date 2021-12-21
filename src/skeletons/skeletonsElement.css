@@ -26,6 +26,7 @@
   .skeleton-wrapper {
     margin: 20px auto;
     padding: 10px 15px;
+    position: relative;
   }
   /* skeleton profile */
 .skeleton-profile {
@@ -33,4 +34,43 @@
   grid-template-columns: 1fr 2fr;
   grid-gap: 30px;
   align-items: center;
+}
+
+/* themes */
+.skeleton-wrapper.light {
+  background: #f2f2f2;
+}
+.skeleton-wrapper.dark {
+  background: #444;
+}
+.skeleton-wrapper.dark .skeleton {
+  background: #777;
+}
+
+/* animation effects */
+.shimmer-wrapper {
+  position: absolute;
+  /* parent must be relative position & overflow hidden */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: loading 2.5s infinite;
+}
+.shimmer {
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  transform: skewX(-20deg);
+  box-shadow: 0 0 30px 30px rgba(255,255,255,0.2);
+}
+.dark .shimmer {
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 0 30px 30px rgba(255,255,255,0.05);
+}
+
+@keyframes loading {
+  0% { transform: translateX(-150%) }
+  50% { transform: translateX(-60%) }
+  100% { transform: translateX(150%) }
 }

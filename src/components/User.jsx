@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from 'react'
+import { SkeletonProfile } from '../skeletons/SkeletonProfile';
 
 const User = () => {
     const [profile ,setProffile] = useState(null);
@@ -23,7 +24,7 @@ const User = () => {
       </div>
       )}
 
-{!profile && <div>Loading...</div>}
+{!profile && <SkeletonProfile   theme="light"/>}
     </div>
 
   )

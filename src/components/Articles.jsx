@@ -25,7 +25,7 @@ const Articles = () => {
         </div>
       ))}
 
-      {!articles && [1,2,3,4,5].map((n) => <SkeletonsArticle key={n} />)}
+      {!articles && [1,2,3,4,5].map((n) => <SkeletonsArticle key={n}  theme="light"/>)}
     </div>
   )
 }

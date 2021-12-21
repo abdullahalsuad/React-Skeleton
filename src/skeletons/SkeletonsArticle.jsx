@@ -1,9 +1,11 @@
 import React from 'react'
 import Skeletons from '../../src/skeletons/Skeletons';
+import Shimmer from './Shimmer';
 
-export const SkeletonsArticle = () => {
+export const SkeletonsArticle = ({theme}) => {
+    const themeClass = theme || 'light'
     return (
-        <div className="skeleton-wrapper">
+        <div className={`skeleton-wrapper ${themeClass}`}>
             <div className="skeleton-article">
                 <Skeletons type="title"/>
                 <Skeletons type="text"/>
@@ -14,6 +16,7 @@ export const SkeletonsArticle = () => {
                 <Skeletons type="avatar"/> */}
 
             </div>
+            <Shimmer />
         </div>
     )
 }
